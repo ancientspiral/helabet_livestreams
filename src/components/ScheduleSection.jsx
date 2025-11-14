@@ -5,8 +5,6 @@ import {
   deriveScheduleBucket,
 } from "../utils/streams.js";
 
-const TAB_OPTIONS = [{ label: "Today", value: "today" }];
-
 const formatDateOnlyLabel = (date) => {
   if (!date) return null;
   const formatter = new Intl.DateTimeFormat("en-GB", {
@@ -92,7 +90,7 @@ const matchesTab = (item, tab, referenceDate) => {
 };
 
 const ScheduleSection = ({ transmissions = [] }) => {
-  const [activeTab, setActiveTab] = useState("today");
+  const activeTab = "today";
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -155,22 +153,6 @@ const ScheduleSection = ({ transmissions = [] }) => {
         <p className="schedule-date">{headerLabel}</p>
       </header>
 
-      <div className="schedule-tabs">
-        {TAB_OPTIONS.map((tab) => {
-          const isActive = tab.value === activeTab;
-          return (
-            <button
-              key={tab.value}
-              type="button"
-              className={`schedule-tab${isActive ? " is-active" : ""}`}
-              onClick={() => setActiveTab(tab.value)}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
-
       {countdownValue ? (
         <div className="schedule-countdown" role="status">
           <span className="countdown-label">Next stream starts in:</span>
@@ -180,8 +162,8 @@ const ScheduleSection = ({ transmissions = [] }) => {
         <div className="schedule-countdown is-empty" role="status">
           <span>
             {sortedItems.length
-              ? "Streams scheduled for this tab"
-              : "No streams for this tab"}
+              ? "Streams scheduled for today"
+              : "No streams for today"}
           </span>
         </div>
       )}
