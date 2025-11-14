@@ -1,0 +1,8 @@
+[
+  { "li": 1000001, "name": "Premier League", "sportId": 1 },
+  { "li": 1000002, "name": "KHL Cup", "sportId": 2 },
+  { "li": 1000003, "name": "EuroLeague", "sportId": 3 },
+  { "li": 2922124, "name": "WTA Finals Doubles", "sportId": 4 },
+  { "li": 2922863, "name": "ATP Athens", "sportId": 4 },
+  { "li": 2922878, "name": "ATP Athens Doubles", "sportId": 4 }
+]

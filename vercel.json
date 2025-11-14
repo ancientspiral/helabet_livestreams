@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "api/index.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    { "src": "/api/health", "dest": "api/index.ts" },
+    { "src": "/api/hlb/(.*)", "dest": "api/index.ts" }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist/server",
+    "rootDir": ".",
+    "module": "NodeNext",
+    "target": "ES2022",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"],
+    "noEmit": false
+  },
+  "include": [
+    "src/helabetSession.ts",
+    "src/lib/**/*.ts",
+    "src/routes/**/*.ts",
+    "src/serverless/**/*.ts",
+    "src/express/**/*.ts",
+    "src/client/**/*.ts",
+    "api/**/*.ts",
+    "server/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
